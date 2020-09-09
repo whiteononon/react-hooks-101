@@ -1,5 +1,5 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   return (
@@ -39,7 +39,7 @@ const App = () => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
