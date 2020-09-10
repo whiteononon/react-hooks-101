@@ -1,4 +1,5 @@
 import React from 'react'
+import { DELETE_EVENT } from '../actions'
 
 const Event = ({ dispath, event }) => {
     const id = event.id
@@ -6,7 +7,7 @@ const Event = ({ dispath, event }) => {
         const result = window.confirm(`このイベント${id}を削除しますか？`)
         if (result) {
             dispath({
-                type: 'DELETE_EVENT',
+                type: DELETE_EVENT,
                 id,
             })
         }
