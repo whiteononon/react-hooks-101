@@ -3,10 +3,13 @@ import React from 'react'
 const Event = ({ dispath, event }) => {
     const id = event.id
     const handleClickDeleteButton = () => {
-        dispath({
-            type: 'DELETE_EVENT',
-            id,
-        })
+        const result = window.confirm(`このイベント${id}を削除しますか？`)
+        if (result) {
+            dispath({
+                type: 'DELETE_EVENT',
+                id,
+            })
+        }
     }
 
     return (
