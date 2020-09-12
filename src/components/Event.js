@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { DELETE_EVENT } from '../actions'
 
-const Event = ({ dispath, event }) => {
+import AppContext from '../contexts/AppContexts'
+
+const Event = ({ event }) => {
+    const { dispath } = useContext(AppContext)
     const id = event.id
     const handleClickDeleteButton = () => {
         const result = window.confirm(`このイベント${id}を削除しますか？`)
