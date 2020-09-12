@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
-import { DELETE_EVENT } from '../actions'
+import { DELETE_EVENT, ADD_OPERATION_LOG } from '../actions'
 
 import AppContext from '../contexts/AppContexts'
+import { timeCurrentIso8601 } from '../utils'
 
 const Event = ({ event }) => {
     const { dispath } = useContext(AppContext)
@@ -12,6 +13,11 @@ const Event = ({ event }) => {
             dispath({
                 type: DELETE_EVENT,
                 id,
+            })
+            dispath({
+                type: ADD_OPERATION_LOG,
+                description: `イベント${id}を削除しました`,
+                operatedAt: timeCurrentIso8601()
             })
         }
     }

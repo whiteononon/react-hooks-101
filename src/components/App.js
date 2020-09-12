@@ -13,7 +13,6 @@ const App = () => {
     operationLogs: [],
   }
   const [state, dispath] = useReducer(reducer, initialState)
-  console.log('App', state)
 
   return (
     <AppContext.Provider value={{ state, dispath }}>
