@@ -4,17 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import EventForm from './EventForm'
 import Events from './Events'
 
-import reducer from '../reducers'
+import reducer from '../reducers/index'
 import AppContext from '../contexts/AppContexts'
 
 const App = () => {
-  const [state, dispath] = useReducer(reducer, [])
+  const initialState = {
+    events: [],
+    operaionLogs: [],
+  }
+  const [state, dispath] = useReducer(reducer, initialState)
+  console.log('App', state)
 
   return (
     <AppContext.Provider value={{ state, dispath }}>
       <div className="container-fluid">
-        <EventForm/>
-        <Events/>
+        <EventForm />
+        <Events />
       </div>
     </AppContext.Provider>
   )
