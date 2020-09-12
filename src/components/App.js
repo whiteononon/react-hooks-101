@@ -10,7 +10,7 @@ import AppContext from '../contexts/AppContexts'
 const App = () => {
   const initialState = {
     events: [],
-    operaionLogs: [],
+    operationLogs: [],
   }
   const [state, dispath] = useReducer(reducer, initialState)
   console.log('App', state)
